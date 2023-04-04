@@ -1,6 +1,25 @@
-function hasTargetSum(array, target) {
-  // Write your algorithm here
-}
+
+  function hasTargetSum(arr, target) {
+    const set = new Set();
+    for (let i = 0; i < arr.length; i++) {
+      const complement = target - arr[i];
+      if (set.has(complement)) {
+        return true;
+      }
+      set.add(arr[i]);
+    }
+    return false;
+  }
+  
+ // console.log(hasTargetSum([3, 8, 12, 4, 11, 7], 10)); // true
+ // console.log(hasTargetSum([22, 19, 4, 6, 30], 25)); // true
+ // console.log(hasTargetSum([1, 2, 5], 4)); // false
+  //console.log(hasTargetSum([-7, 10, 4, 8], 3)); // true
+  //console.log(hasTargetSum([1, 2, 3, 4], 5)); // true
+ // console.log(hasTargetSum([2, 2, 3, 3], 4)); // true
+ // console.log(hasTargetSum([4], 4)); // false
+  
+//}
 
 /* 
   Write the Big O time complexity of your function here
@@ -8,6 +27,7 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+
 */
 
 /*
